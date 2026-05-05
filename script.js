@@ -134,9 +134,9 @@ function makeQuestion(category, seed, index) {
     category,
     scene,
     choices: [
-      { label: "❌ 共依存", text: codependent, type: "codependent" },
-      { label: "⚠️ 中間", text: middle, type: "middle" },
-      { label: "✅ 境界線あり", text: healthy, type: "healthy" }
+      { text: codependent, type: "codependent" },
+      { text: middle, type: "middle" },
+      { text: healthy, type: "healthy" }
     ],
     feedback: feedbacks[index % feedbacks.length],
     modelAnswer,
