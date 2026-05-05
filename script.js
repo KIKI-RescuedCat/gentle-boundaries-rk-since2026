@@ -10,7 +10,7 @@ const questionSeeds = {
     ["買い物を頼まれましたが、今日はすでに予定が詰まっています。", "うん、私が行ってくるね。", "自分で行けばいいじゃない。", "今日は行けないから、ネット注文か明日にしてもいい？", "今日は予定が詰まっていて行けない。明日なら行けるし、急ぎならネット注文にしたい。"],
     ["家計の相談をしたいのに、相手が軽く流して別の話に変えました。", "そうだよね、今じゃなくていいよ。", "いつも真剣に考えてくれないよね。", "この話は大事だから、今週中に15分だけ時間を取りたい。", "家計の話は私にとって大事。今週中に15分だけ一緒に確認したい。"],
     ["休みの日に、相手の予定に合わせる前提で話が進んでいます。", "いいよ、私の予定は後で考えるね。", "私のことを全然考えてないよね。", "私も休みたい時間があるから、午前と午後で分けて考えたい。", "私も休む時間を取りたい。午前は自分の時間、午後は一緒に動く形ならできそう。"],
-    ["相手の機嫌が悪く、あなたが場をなだめようとして疲れています。", "私が悪かったなら直すから、機嫌を直して。", "その態度、本当に疲れる。", "機嫌が悪そうに見えるね。話せる時に聞くけれど、私は少し離れて落ち着くね。", "今は空気が重く感じるから、私は少し休むね。話せる状態になったら聞くよ。"],
+    ["相手が不機嫌そうなとき、あなたはどう関わるか迷っています。", "私が何かしたなら全部直すから、何でも言って。", "その態度だと私も疲れるから、もう知らない。", "不機嫌そうに見えるね。話したければ聞くけれど、私は少し離れて落ち着くね。", "不機嫌そうに見えるね。必要なら聞くよ。私は少し距離を取りながら関わるね。"],
     ["夜遅くに重い話を始められ、眠る時間を削りそうです。", "眠いけど大丈夫、最後まで聞くよ。", "こんな時間に話すなんて無理。", "大切な話だから、明日の夜に時間を取って聞きたい。", "今は眠る時間にしたい。明日の夜なら集中して聞けるよ。"],
     ["相手の親族対応を、あなたが当然やるものとして頼まれました。", "わかった。私が連絡しておくね。", "どうして私が全部やるの。", "今回はあなた側の連絡なので、あなたから伝えてほしい。必要なら文面は一緒に考えるよ。", "連絡はあなたからお願いしたい。文面を一緒に考えることならできるよ。"],
     ["家で休んでいると、何もしていないように言われました。", "そうだよね、何かしなきゃね。", "休むことも許されないの？", "今日は回復のために休む時間にしているよ。夕方にできることを一つ決めるね。", "今は休む時間として取っているよ。夕方に一つだけ家のことをするね。"],
@@ -78,7 +78,7 @@ const questionSeeds = {
     ["相手の恋愛相談で、毎回すぐ返信することを期待されています。", "いつでもすぐ返すね。", "返信を期待されると重い。", "すぐ返せない時もあるよ。読める時に落ち着いて返すね。", "すぐ返信できない時もある。読める時に落ち着いて返すね。"],
     ["気が進まないお願いを、友情を理由に頼まれました。", "友達だし、やるよ。", "友達なら頼まないで。", "友達だから大切にしたいけれど、今回は引き受けられない。", "大切な友達だけど、今回は私には難しい。別案なら一緒に考えるね。"],
     ["SNSに写真を載せたいと言われましたが、あなたは載りたくありません。", "いいよ、載せて大丈夫。", "勝手に載せないでよ。", "私は写真を載せないでほしい。景色だけなら大丈夫だよ。", "私が写っている写真は載せないでほしい。景色や料理だけなら大丈夫。"],
-    ["友人の不機嫌を見て、自分が機嫌を取らなければと感じています。", "私が何かするよ。何でも言って。", "不機嫌を出されると疲れる。", "元気がなさそうだね。話したければ聞くけど、私は無理に背負わないね。", "元気がなさそうに見えるね。必要なら聞くよ。私はできる範囲で関わるね。"],
+    ["友人が不機嫌そうなとき、あなたはどう関わるか迷っています。", "私が何かするよ。何でも言って。", "不機嫌そうにされると私も落ち着かないから、距離を置くね。", "元気がなさそうだね。話したければ聞くけど、私は無理に背負わないね。", "元気がなさそうに見えるね。必要なら聞くよ。私はできる範囲で関わるね。"],
     ["お金の立て替えを頼まれましたが、少し不安があります。", "いいよ、払っておくね。", "お金にルーズなのは困る。", "今回は立て替えはしないね。別々に払う形にしたい。", "今回は立て替えず、別々に支払いたい。"],
     ["あなたの近況を詳しく聞かれ、話したくない部分があります。", "全部話すね。", "詮索しないで。", "心配してくれてありがとう。詳しい話はまだ控えたいんだ。", "気にかけてくれてありがとう。詳しいことはまだ話さずにいたい。"],
     ["友人の都合に合わせて、あなたが毎回遠い場所へ行っています。", "今回もそっちに行くね。", "たまにはこっちに来てよ。", "今回は中間地点かオンラインにしたい。移動の負担を減らしたいんだ。", "今回は中間地点かオンラインがいい。移動の負担を少し減らしたい。"],
@@ -92,7 +92,7 @@ const questionSeeds = {
     ["相手のペースで予定が長引き、帰りたいと言いにくいです。", "まだ大丈夫、付き合うよ。", "もう帰りたいんだけど。", "今日はそろそろ帰るね。楽しかったから、また続きは今度話そう。", "今日はここで帰るね。楽しかったよ。また今度ゆっくり話そう。"]
   ],
   "共通": [
-    ["相手が少し不機嫌そうで、自分が何かして機嫌を直さなければと焦っています。", "私が何かしたならごめん。何でもするから言って。", "不機嫌を出されるとこっちも嫌な気分になる。やめて。", "少し元気がなさそうに見えるね。必要なら話を聞くよ。私は今できる範囲で関わるね。", "何かあれば聞くよ。ただ、私が全部解決しなければとは考えずに、できる範囲で関わるね。"],
+    ["相手が少し不機嫌そうなとき、あなたはどう関わるかを選ぼうとしています。", "私が何かしたならごめん。何でもするから言って。", "不機嫌そうにされると私もつらいから、今は距離を置きたい。", "少し元気がなさそうに見えるね。必要なら話を聞くよ。私は今できる範囲で関わるね。", "何かあれば聞くよ。ただ、相手の感情を私が背負いすぎず、できる範囲で関わるね。"],
     ["頼まれごとを断りたいのに、罪悪感で即答しそうになっています。", "大丈夫です。なんとかします。", "そんなことまで頼まれても困ります。", "すぐには返事できないので、予定を確認してから答えます。", "今すぐ判断できないので、確認してから返事します。難しい場合は早めに伝えますね。"],
     ["相手の期待を察して、言われる前に引き受けそうです。", "私がやっておきますね。", "期待されても困ります。", "必要なら相談してください。できる範囲を確認してから返事します。", "必要なら相談してください。できるかどうか確認してから返事します。"],
     ["断った後に、相手の沈黙が気になって撤回したくなっています。", "やっぱり大丈夫です。私がやります。", "黙られると困ります。", "少し残念に感じるかもしれませんが、今回は難しいです。", "残念に感じるかもしれませんが、今回は引き受けられません。"],
@@ -102,7 +102,7 @@ const questionSeeds = {
     ["予定を詰め込みすぎて、心身の余白がなくなっています。", "全部こなします。", "もう全部キャンセルしたい。", "今日は一つ減らして、休む時間を確保します。", "今日は予定を一つ減らし、休む時間を確保します。"],
     ["相手の感情に引っぱられ、自分の気持ちがわからなくなっています。", "相手がつらいなら私も我慢します。", "感情をぶつけられても困ります。", "相手の気持ちは受け止めつつ、私は一度落ち着いて自分の気持ちを確認します。", "相手の気持ちは大切にしつつ、私は一度離れて自分の気持ちを確認します。"],
     ["お願いを断る理由を、完璧に説明しなければと思っています。", "理由を全部説明します。", "理由まで言う必要ないですよね。", "詳しい理由は控えますが、今回は難しいです。", "詳しい理由は控えます。今回は引き受けられません。"],
-    ["相手の問題を、自分が解決しなければと感じています。", "私が何とかします。", "自分で解決してください。", "一緒に考えることはできますが、私が代わりに解決することはできません。", "一緒に整理することはできます。ただ、代わりに解決することはできません。"],
+    ["相手が困っているとき、自分の関わり方をどこまでにするか考えています。", "私が何とかします。全部任せてください。", "それは自分で解決してください。", "一緒に考えることはできますが、私が代わりに解決することはできません。", "一緒に整理することはできます。ただ、代わりに解決することはできません。"],
     ["自分の休息を後回しにして、相手を優先し続けています。", "私は後で休めば大丈夫です。", "私ばかり我慢している気がします。", "今日は自分の回復を優先します。対応は明日にします。", "今日は回復を優先します。対応は明日にします。"],
     ["頼まれた瞬間に、断る選択肢が頭から消えています。", "はい、できます。", "急に頼まれても困ります。", "一度持ち帰って考えます。返事は後でします。", "今すぐ決めず、一度考えます。後で返事します。"],
     ["相手に合わせすぎて、後から疲れや怒りが出ています。", "合わせたのは自分だから我慢します。", "本当は嫌だったのに。", "次からはその場で、自分の希望を一つ伝えるようにします。", "次はその場で、自分の希望を一つだけ伝えてみます。"],
@@ -116,27 +116,27 @@ const questionSeeds = {
 };
 
 function makeQuestion(category, seed, index) {
-  const [scene, passive, aggressive, assertive, modelAnswer] = seed;
+  const [scene, codependent, middle, healthy, modelAnswer] = seed;
   const feedbacks = [
-    "境界線として適切なのは、自分の状態と希望を短く伝え、必要なら代替案を出す返答です。",
-    "相手を責め切らず、自分に必要な手順や範囲を明確にすると、関係を保ちながら境界線を示せます。",
-    "断ることと相手を大切にしないことは別です。感謝や配慮を添えながら、自分の限界を言葉にします。",
-    "罪悪感や焦りが出た時ほど、即答せずに考える時間を取ることが落ち着いた選択につながります。"
+    "境界線として適切なのは、相手の感情や事情を尊重しつつ、自分の責任範囲を超えない返答です。",
+    "共感はできますが、相手の感情を背負いすぎる必要はありません。自分にできる範囲を言葉にします。",
+    "相手を責めず、自分の限界や希望を短く伝えると、関係を保ちながら境界線を示せます。",
+    "罪悪感や焦りが出た時ほど、即答せずに考える時間を取り、自分の選べる範囲へ戻ります。"
   ];
   const points = [
     "DEAR MANのDescribeとAssertを意識し、事実と希望を分けて伝えます。",
-    "GIVEのGentleを意識し、柔らかさと明確さを同時に持たせます。",
-    "FASTのTruthfulを使い、過度に謝らず本当の希望を言葉にします。",
-    "CBTでは自動思考を見直し、『引き受けないと悪い』から『できる範囲を選んでよい』へ戻します。"
+    "GIVEのGentleを意識し、相手への敬意と自分の限界を同時に持たせます。",
+    "FASTのTruthfulを使い、過度に謝ったり背負ったりせず、本当の希望を言葉にします。",
+    "CBTでは自動思考を見直し、『相手の感情は私の責任』から『私は自分の関わり方を選べる』へ戻します。"
   ];
 
   return {
     category,
     scene,
     choices: [
-      { text: passive, type: "passive" },
-      { text: aggressive, type: "aggressive" },
-      { text: assertive, type: "assertive" }
+      { label: "❌ 共依存", text: codependent, type: "codependent" },
+      { label: "⚠️ 中間", text: middle, type: "middle" },
+      { label: "✅ 境界線あり", text: healthy, type: "healthy" }
     ],
     feedback: feedbacks[index % feedbacks.length],
     modelAnswer,
@@ -149,6 +149,7 @@ const questions = Object.entries(questionSeeds).flatMap(([category, seeds]) =>
 );
 
 let selectedCategory = "共通";
+let activeCategory = "共通";
 let dailyQuestions = [];
 let currentIndex = 0;
 let score = 0;
@@ -165,6 +166,7 @@ const progressText = document.getElementById("progressText");
 const progressFill = document.getElementById("progressFill");
 const questionCategory = document.getElementById("questionCategory");
 const scoreText = document.getElementById("scoreText");
+const devCategoryLabel = document.getElementById("devCategoryLabel");
 const sceneText = document.getElementById("sceneText");
 const choicesEl = document.getElementById("choices");
 const feedback = document.getElementById("feedback");
@@ -195,14 +197,15 @@ function renderCategories() {
     button.addEventListener("click", () => {
       selectedCategory = category;
       renderCategories();
+      updateDevCategoryLabel();
     });
     categoryGrid.appendChild(button);
   });
 }
 
 function startTraining() {
-  const categoryQuestions = questions.filter((question) => question.category === selectedCategory);
-  dailyQuestions = shuffle(categoryQuestions).slice(0, 5);
+  activeCategory = selectedCategory;
+  dailyQuestions = createDailyQuestions(activeCategory);
   avoidRepeatFromLastSession();
   currentIndex = 0;
   score = 0;
@@ -211,8 +214,14 @@ function startTraining() {
   renderQuestion();
 }
 
+function createDailyQuestions(category) {
+  const categoryQuestions = questions.filter((question) => question.category === category);
+  const selectedQuestions = shuffle(categoryQuestions).slice(0, 5);
+  return selectedQuestions.filter((question) => question.category === category);
+}
+
 function avoidRepeatFromLastSession() {
-  const lastScene = localStorage.getItem(`${lastQuestionKeyPrefix}${selectedCategory}`);
+  const lastScene = localStorage.getItem(`${lastQuestionKeyPrefix}${activeCategory}`);
   if (!lastScene || dailyQuestions.length < 2 || dailyQuestions[0].scene !== lastScene) {
     return;
   }
@@ -231,21 +240,30 @@ function showScreen(name) {
 
 function renderQuestion() {
   const question = dailyQuestions[currentIndex];
-  localStorage.setItem(`${lastQuestionKeyPrefix}${selectedCategory}`, question.scene);
+  if (!question || question.category !== activeCategory) {
+    dailyQuestions = createDailyQuestions(activeCategory);
+    currentIndex = 0;
+    answerResults = Array(dailyQuestions.length).fill(null);
+  }
+
+  const currentQuestion = dailyQuestions[currentIndex];
+  localStorage.setItem(`${lastQuestionKeyPrefix}${activeCategory}`, currentQuestion.scene);
   answered = false;
   feedback.classList.add("hidden");
   choicesEl.innerHTML = "";
   progressText.textContent = `${currentIndex + 1} / ${dailyQuestions.length} 問`;
   progressFill.style.width = `${(currentIndex / dailyQuestions.length) * 100}%`;
-  questionCategory.textContent = question.category;
+  questionCategory.textContent = currentQuestion.category;
   scoreText.textContent = `正答 ${score} 問`;
-  sceneText.textContent = question.scene;
+  sceneText.textContent = currentQuestion.scene;
+  updateDevCategoryLabel(currentQuestion.category);
 
-  shuffle(question.choices).forEach((choice) => {
+  shuffle(currentQuestion.choices).forEach((choice) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "choice";
-    button.textContent = choice.text;
+    button.dataset.type = choice.type;
+    button.innerHTML = `<span class="choice-label">${choice.label}</span><span>${choice.text}</span>`;
     button.addEventListener("click", () => selectChoice(choice, button));
     choicesEl.appendChild(button);
   });
@@ -258,15 +276,17 @@ function selectChoice(choice, selectedButton) {
 
   answered = true;
   const question = dailyQuestions[currentIndex];
-  const isCorrect = choice.type === "assertive";
+  const isCorrect = choice.type === "healthy";
   answerResults[currentIndex] = isCorrect;
   score = answerResults.filter(Boolean).length;
 
   [...choicesEl.children].forEach((button) => {
     button.disabled = true;
-    const source = question.choices.find((item) => item.text === button.textContent);
-    if (source.type === "assertive") {
+    if (button.dataset.type === "healthy") {
       button.classList.add("correct");
+    }
+    if (button.dataset.type === "middle") {
+      button.classList.add("middle");
     }
   });
 
@@ -274,7 +294,12 @@ function selectChoice(choice, selectedButton) {
     selectedButton.classList.add("incorrect");
   }
 
-  resultText.textContent = isCorrect ? "よい境界線の返答です" : "ここは境界線の言い方を練習できる場面です";
+  const resultMessages = {
+    codependent: "❌ 共依存：相手を背負いすぎています",
+    middle: "⚠️ 中間：少し巻き込まれています",
+    healthy: "✅ 境界線あり：健全な関わり方です"
+  };
+  resultText.textContent = resultMessages[choice.type];
   feedbackText.textContent = question.feedback;
   modelAnswerText.textContent = question.modelAnswer;
   pointText.textContent = question.point;
@@ -308,7 +333,7 @@ function saveRecord() {
   const rate = Math.round((score / dailyQuestions.length) * 100);
   records.unshift({
     date: new Date().toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" }),
-    category: selectedCategory,
+    category: activeCategory,
     score,
     total: dailyQuestions.length,
     rate,
@@ -317,6 +342,15 @@ function saveRecord() {
   localStorage.setItem(storageKey, JSON.stringify(records.slice(0, 7)));
   renderHistory();
   showScreen("intro");
+}
+
+function updateDevCategoryLabel(currentCategory = "") {
+  if (!devCategoryLabel) {
+    return;
+  }
+
+  const currentText = currentCategory ? ` / 表示中: ${currentCategory}` : "";
+  devCategoryLabel.textContent = `確認用 選択: ${selectedCategory} / 出題セット: ${activeCategory}${currentText}`;
 }
 
 function getRecords() {
@@ -362,4 +396,5 @@ summaryHomeBtn.addEventListener("click", () => showScreen("intro"));
 clearHistoryBtn.addEventListener("click", clearHistory);
 
 renderCategories();
+updateDevCategoryLabel();
 renderHistory();
