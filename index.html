@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>境界線トレーニング</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="intro" id="intro">
+      <div class="brand-row">
+        <span class="mark" aria-hidden="true"></span>
+        <p>15分セルフケア</p>
+      </div>
+      <h1>
+        <span>Gentle Boundaries</span>
+        <small>～Daily Relationship Practice～</small>
+      </h1>
+      <p class="lead">
+        人間関係で「我慢しすぎる」「合わせすぎる」「罪悪感で引き受ける」反応に気づき、
+        落ち着いて自分の希望を伝える練習をします。
+      </p>
+      <p class="note">
+        このアプリは医療行為や治療ではありません。心理学の考え方を参考にした、日々のセルフケア用トレーニングです。
+      </p>
+
+      <div class="section-label">カテゴリ</div>
+      <div class="category-grid" id="categoryGrid"></div>
+
+      <button class="primary full" id="startBtn" type="button">今日の5問を始める</button>
+
+      <section class="history" aria-labelledby="historyTitle">
+        <div class="history-head">
+          <h2 id="historyTitle">最近の記録</h2>
+          <button class="text-button" id="clearHistoryBtn" type="button">記録を消去</button>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </section>
+    </section>
+
+    <section class="quiz hidden" id="quiz">
+      <div class="topbar">
+        <button class="icon-button" id="homeBtn" type="button" aria-label="最初に戻る">⌂</button>
+        <div class="progress-wrap" aria-label="進行状況">
+          <div class="progress-text" id="progressText"></div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-meta">
+        <span id="questionCategory"></span>
+        <span id="scoreText"></span>
+      </div>
+
+      <h2 id="sceneText"></h2>
+      <div class="choices" id="choices"></div>
+
+      <div class="feedback hidden" id="feedback">
+        <p class="result" id="resultText"></p>
+        <p id="feedbackText"></p>
+        <div class="model">
+          <span>モデル返答</span>
+          <p id="modelAnswerText"></p>
+        </div>
+        <div class="point">
+          <span>今日の練習ポイント</span>
+          <p id="pointText"></p>
+        </div>
+        <div class="actions">
+          <button class="secondary" id="retryBtn" type="button">同じ問題をやり直す</button>
+          <button class="primary" id="nextBtn" type="button">次の問題</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary hidden" id="summary">
+      <div class="summary-score" id="summaryScore"></div>
+      <h2>今日の気づき</h2>
+      <p class="summary-copy">
+        うまくできたこと、少し難しかった場面、次に試したい言い方を短く残しておきましょう。
+      </p>
+      <textarea id="reflectionInput" rows="6" placeholder="例：断る前に深呼吸すると、少し落ち着いて言えそう。"></textarea>
+      <div class="actions">
+        <button class="secondary" id="summaryHomeBtn" type="button">最初に戻る</button>
+        <button class="primary" id="saveBtn" type="button">記録を保存</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
