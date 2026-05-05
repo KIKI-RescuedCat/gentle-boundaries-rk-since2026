@@ -263,7 +263,7 @@ function renderQuestion() {
     button.type = "button";
     button.className = "choice";
     button.dataset.type = choice.type;
-    button.innerHTML = `<span class="choice-label">${choice.label}</span><span>${choice.text}</span>`;
+    button.textContent = choice.text;
     button.addEventListener("click", () => selectChoice(choice, button));
     choicesEl.appendChild(button);
   });
