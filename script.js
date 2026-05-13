@@ -3,28 +3,28 @@ const lastQuestionKeyPrefix = "boundaryTrainingLastQuestion:";
 const dailyQuestionCount = 10;
 
 const situationContexts = [
-  { person: "身近な人", request: "週末の予定を手伝ってほしい", limit: "休む時間を確保したい", boundary: "今日は休む予定を優先したい" },
-  { person: "家族", request: "今すぐ買い物に行ってほしい", limit: "すでに予定が詰まっている", boundary: "今日は行けないので別の方法を考えたい" },
-  { person: "親しい相手", request: "長めの相談を聞いてほしい", limit: "気持ちの余裕が少ない", boundary: "聞ける時間を短く区切りたい" },
-  { person: "職場の人", request: "追加作業を今日中に進めてほしい", limit: "退勤時間が近い", boundary: "明日の着手にしたい" },
-  { person: "友人", request: "集まりに参加してほしい", limit: "一人で休みたい", boundary: "今回は見送りたい" },
-  { person: "親族", request: "急な訪問に対応してほしい", limit: "家で静かに過ごしたい", boundary: "別の日に調整したい" },
-  { person: "同僚", request: "代わりに説明してほしい", limit: "自分の担当範囲を超えている", boundary: "知っている範囲だけ共有したい" },
-  { person: "知人", request: "お金を立て替えてほしい", limit: "金銭面で不安がある", boundary: "立て替えはしない形にしたい" },
-  { person: "相手", request: "写真や近況を頻繁に送ってほしい", limit: "頻度が負担になっている", boundary: "送れる時だけにしたい" },
-  { person: "グループ", request: "調整役を引き受けてほしい", limit: "毎回役割が偏っている", boundary: "今回は調整役を休みたい" },
-  { person: "大切な人", request: "夜遅くに話を聞いてほしい", limit: "眠る時間を守りたい", boundary: "明日に回したい" },
-  { person: "相手", request: "苦手な冗談を受け流してほしい", limit: "その言い方に傷ついている", boundary: "その表現は控えてほしい" },
-  { person: "家の人", request: "体調が悪くても普段通り動いてほしい", limit: "体力が残っていない", boundary: "最低限だけにしたい" },
-  { person: "仕事相手", request: "休みの日に返信してほしい", limit: "休日は仕事から離れたい", boundary: "次の勤務日に確認したい" },
-  { person: "友人", request: "急に家へ行きたい", limit: "迎える準備ができていない", boundary: "別の日にしたい" },
-  { person: "相手", request: "予定を何度も変更してほしい", limit: "調整に疲れている", boundary: "今回は決めた時間で進めたい" },
-  { person: "職場の人", request: "曖昧な依頼を広めに対応してほしい", limit: "範囲が見えないまま進めたくない", boundary: "完了条件を確認したい" },
-  { person: "身近な人", request: "自分の予定より相手の都合を優先してほしい", limit: "先に決めた予定がある", boundary: "先約を優先したい" },
-  { person: "相談してきた相手", request: "問題を代わりに解決してほしい", limit: "代わりに背負うことはできない", boundary: "一緒に整理する範囲にしたい" },
-  { person: "相手", request: "個人的なことを詳しく話してほしい", limit: "話したくない部分がある", boundary: "詳しい話は控えたい" },
-  { person: "親しい人", request: "気が進まない誘いに来てほしい", limit: "気持ちが乗らない", boundary: "今回は参加しない選択をしたい" },
-  { person: "周囲の人", request: "いつも通り場に合わせてほしい", limit: "自分の気持ちを置き去りにしている", boundary: "自分の希望も一つ伝えたい" }
+  { person: "身近な人", request: "今週末、ちょっと手伝える？", limit: "休む時間を取っておきたい", boundary: "今日は休む予定を優先したい" },
+  { person: "家族", request: "今から買い物行ける？", limit: "もう予定が詰まっている", boundary: "今日は行けないので別の方法を考えたい" },
+  { person: "親しい相手", request: "今ちょっと話聞いてもらえる？", limit: "気持ちの余裕が少ない", boundary: "聞ける時間を短く区切りたい" },
+  { person: "職場の人", request: "これ、今日中にお願いできる？", limit: "退勤時間が近い", boundary: "明日の着手にしたい" },
+  { person: "友人", request: "今度の集まり、来るよね？", limit: "一人で休みたい", boundary: "今回は見送りたい" },
+  { person: "親族", request: "今日、少し寄ってもいい？", limit: "家で静かに過ごしたい", boundary: "別の日に調整したい" },
+  { person: "同僚", request: "代わりに説明しておいてくれない？", limit: "自分の担当範囲を超えている", boundary: "知っている範囲だけ共有したい" },
+  { person: "知人", request: "一回立て替えておいてもらえる？", limit: "お金のやり取りに不安がある", boundary: "立て替えはしない形にしたい" },
+  { person: "相手", request: "最近の写真、もっと送ってよ", limit: "頻度が負担になっている", boundary: "送れる時だけにしたい" },
+  { person: "グループ", request: "今回も日程まとめてもらっていい？", limit: "毎回役割が偏っている", boundary: "今回は調整役を休みたい" },
+  { person: "大切な人", request: "今夜、少しだけ話せる？", limit: "眠る時間を守りたい", boundary: "明日に回したい" },
+  { person: "相手", request: "それくらい笑って流してよ", limit: "その言い方に傷ついている", boundary: "その表現は控えてほしい" },
+  { person: "家の人", request: "いつも通りお願いね", limit: "体力が残っていない", boundary: "最低限だけにしたい" },
+  { person: "仕事相手", request: "休み中だけど、これ見られる？", limit: "休日は仕事から離れたい", boundary: "次の勤務日に確認したい" },
+  { person: "友人", request: "今から家行ってもいい？", limit: "迎える準備ができていない", boundary: "別の日にしたい" },
+  { person: "相手", request: "やっぱり時間変えてもいい？", limit: "調整に疲れている", boundary: "今回は決めた時間で進めたい" },
+  { person: "職場の人", request: "いい感じに広めに見ておいて", limit: "範囲が見えないまま進めたくない", boundary: "完了条件を確認したい" },
+  { person: "身近な人", request: "こっちの予定に合わせてくれる？", limit: "先に決めた予定がある", boundary: "先約を優先したい" },
+  { person: "相談してきた相手", request: "もうどうしたらいいか決めてほしい", limit: "代わりに背負うことはできない", boundary: "一緒に整理する範囲にしたい" },
+  { person: "相手", request: "で、実際どうなの？詳しく教えて", limit: "話したくない部分がある", boundary: "詳しい話は控えたい" },
+  { person: "親しい人", request: "来てくれたらうれしいんだけどな", limit: "気持ちが乗らない", boundary: "今回は参加しない選択をしたい" },
+  { person: "周囲の人", request: "いつもの感じで合わせてくれるよね", limit: "自分の気持ちを置き去りにしている", boundary: "自分の希望も一つ伝えたい" }
 ];
 
 function naturalHealthy(category, c, index) {
@@ -95,25 +95,25 @@ function contextsForCategory(category) {
   const includesAny = (context, words) => words.some((word) => context.request.includes(word) || context.limit.includes(word));
   const pools = {
     "頼まれごと": situationContexts.filter((context) =>
-      includesAny(context, ["手伝", "行って", "聞いて", "進めて", "参加", "対応", "説明", "立て替え", "送って", "引き受け", "返信", "調整"])
+      includesAny(context, ["手伝", "買い物", "話聞", "今日中", "集まり", "寄って", "説明", "立て替え", "送って", "日程", "見られる", "合わせ"])
     ),
     "罪悪感": situationContexts.filter((context) =>
-      includesAny(context, ["参加", "訪問", "手伝", "相談", "話を聞", "優先", "期待", "来て", "合わせ"])
+      includesAny(context, ["来る", "寄って", "手伝", "話聞", "うれしい", "合わせ", "お願い", "優先", "いつもの"])
     ),
     "不機嫌への反応": situationContexts.filter((context) =>
-      includesAny(context, ["予定", "買い物", "相談", "参加", "訪問", "変更", "優先", "問題", "話", "合わせ"])
+      includesAny(context, ["予定", "買い物", "話", "集まり", "寄って", "時間変え", "優先", "決めて", "合わせ"])
     ),
     "急なお願い": situationContexts.filter((context) =>
-      includesAny(context, ["今すぐ", "今日中", "急な", "急に", "代わり", "追加作業", "買い物", "訪問", "返信", "変更", "調整役"])
+      includesAny(context, ["今から", "今日中", "今週末", "代わり", "買い物", "寄って", "休み中", "時間変え", "日程"])
     ),
     "過剰な共感": situationContexts.filter((context) =>
-      includesAny(context, ["相談", "話を聞", "問題", "説明", "不安", "つら", "個人的", "長め", "代わり", "優先"])
+      includesAny(context, ["話聞", "決めて", "説明", "不安", "詳しく", "長め", "代わり", "優先", "しんど"])
     ),
     "説明しすぎ": situationContexts.filter((context) =>
-      includesAny(context, ["参加", "訪問", "返信", "詳しく", "立て替え", "送って", "引き受け", "来て", "優先", "予定"])
+      includesAny(context, ["集まり", "寄って", "見られる", "詳しく", "立て替え", "送って", "来て", "優先", "予定", "うれしい"])
     ),
     "拒否・断る": situationContexts.filter((context) =>
-      includesAny(context, ["冗談", "写真", "個人的", "家へ", "立て替え", "変更", "普段通り", "優先", "合わせ", "受け流"])
+      includesAny(context, ["笑って", "写真", "詳しく", "家行", "立て替え", "時間変え", "いつも通り", "優先", "合わせ", "流して"])
     )
   };
 
@@ -123,7 +123,7 @@ function contextsForCategory(category) {
 const themeTemplates = [
   {
     category: "頼まれごと",
-    scene: (c) => `${c.person}から「${c.request}」という話が出ました。今日は${c.limit}日。返事をするなら？`,
+    scene: (c) => `${c.person}から連絡が来ます。「${c.request}」 でも今日は、${c.limit}。返すなら？`,
     codependent: (c) => `わかった。私が何とかするね。`,
     middle: (c) => `今はちょっと困るけど、たぶん大丈夫だと思う。`,
     healthy: (c, index) => naturalHealthy("頼まれごと", c, index),
@@ -133,7 +133,7 @@ const themeTemplates = [
   {
     category: "罪悪感",
     scene: `${"dynamic"}`,
-    makeScene: (c) => `${c.person}の期待に応えたい気持ちはあるけれど、「${c.request}」は今の自分には重く感じます。口にするなら？`,
+    makeScene: (c) => `「${c.request}」 画面を見た瞬間、断ったら悪いかな、と胸が重くなります。口にするなら？`,
     codependent: (c) => `申し訳ないから、無理してでもやります。`,
     middle: (c) => `罪悪感はあるけど、できるかどうか少し迷っています。`,
     healthy: (c, index) => naturalHealthy("罪悪感", c, index),
@@ -142,7 +142,7 @@ const themeTemplates = [
   },
   {
     category: "不機嫌への反応",
-    makeScene: (c) => `${c.person}の表情が少し曇っています。「${c.request}」の話も出ていて、空気に引っぱられそうです。どう関わる？`,
+    makeScene: (c) => `${c.person}の返事が少し冷たく感じます。「${c.request}」 空気に引っぱられそうな場面。どう関わる？`,
     codependent: (c) => `機嫌が悪そうだから、私が合わせます。何でも言って。`,
     middle: (c) => `不機嫌そうにされると落ち着かないから、早く済ませたいです。`,
     healthy: (c, index) => naturalHealthy("不機嫌への反応", c, index),
@@ -151,7 +151,7 @@ const themeTemplates = [
   },
   {
     category: "急なお願い",
-    makeScene: (c) => `予定していなかったタイミングで「${c.request}」の話が来ました。こちらは${c.limit}ところです。返事をするなら？`,
+    makeScene: (c) => `予定外の連絡が入ります。「${c.request}」 こちらは、${c.limit}ところ。返すなら？`,
     codependent: (c) => `急ぎなんだよね。今すぐやるよ。`,
     middle: (c) => `急すぎて困るけど、少しならできるかもしれない。`,
     healthy: (c, index) => naturalHealthy("急なお願い", c, index),
@@ -160,7 +160,7 @@ const themeTemplates = [
   },
   {
     category: "過剰な共感",
-    makeScene: (c) => `${c.person}がつらそうに話しています。「${c.request}」の流れで、つい全部受け止めたくなります。どう関わる？`,
+    makeScene: (c) => `${c.person}がしんどそうにしています。「${c.request}」 つい全部受け止めたくなる空気です。どう関わる？`,
     codependent: (c) => `つらいなら私が全部受け止めるよ。最後まで付き合うね。`,
     middle: (c) => `心配だから、少し無理してでも聞いた方がいいかも。`,
     healthy: (c, index) => naturalHealthy("過剰な共感", c, index),
@@ -169,7 +169,7 @@ const themeTemplates = [
   },
   {
     category: "説明しすぎ",
-    makeScene: (c) => `「${c.request}」の話に、胸の中で言い訳がいくつも浮かんできます。短く返すなら？`,
+    makeScene: (c) => `「${c.request}」 断りたいだけなのに、頭の中で理由を並べ始めています。短く返すなら？`,
     codependent: (c) => `本当にごめん。実は色々あって、全部説明すると…。`,
     middle: (c) => `無理なんだけど、理由をわかってもらえないと困ります。`,
     healthy: (c, index) => naturalHealthy("説明しすぎ", c, index),
@@ -178,7 +178,7 @@ const themeTemplates = [
   },
   {
     category: "拒否・断る",
-    makeScene: (c) => `「${c.request}」の流れになりそうです。体の奥で、これは嫌だな、と感じています。言葉にするなら？`,
+    makeScene: (c) => `「${c.request}」 その一言に、少し体が固まります。言葉にするなら？`,
     codependent: (c) => `嫌だけど、波風を立てたくないから合わせます。`,
     middle: (c) => `本当は嫌です。できればやめてほしいです。`,
     healthy: (c, index) => naturalHealthy("拒否・断る", c, index),
