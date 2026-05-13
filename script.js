@@ -210,7 +210,6 @@ const startBtn = document.getElementById("startBtn");
 const homeBtn = document.getElementById("homeBtn");
 const progressText = document.getElementById("progressText");
 const progressFill = document.getElementById("progressFill");
-const questionCategory = document.getElementById("questionCategory");
 const scoreText = document.getElementById("scoreText");
 const sceneText = document.getElementById("sceneText");
 const choicesEl = document.getElementById("choices");
@@ -274,7 +273,6 @@ function renderQuestion() {
   choicesEl.innerHTML = "";
   progressText.textContent = `${currentIndex + 1} / ${dailyQuestions.length} 問`;
   progressFill.style.width = `${(currentIndex / dailyQuestions.length) * 100}%`;
-  questionCategory.textContent = currentQuestion.category;
   scoreText.textContent = `正答 ${score} 問`;
   sceneText.textContent = currentQuestion.scene;
 

@@ -294,7 +294,6 @@ h2 {
   margin-bottom: 14px;
 }
 
-#questionCategory,
 #scoreText {
   display: inline-flex;
   align-items: center;
@@ -583,7 +582,6 @@ button:focus-visible {
     flex-direction: column;
   }
 
-  #questionCategory,
   #scoreText {
     min-height: 30px;
   }
