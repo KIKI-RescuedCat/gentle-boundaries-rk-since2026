@@ -37,13 +37,77 @@ const situationContexts = [
   { person: "周囲の人", request: "いつも通り場に合わせてほしい", limit: "自分の気持ちを置き去りにしている", boundary: "自分の希望も一つ伝えたい" }
 ];
 
+function naturalHealthy(category, c, index) {
+  const pattern = index % 6;
+  const replies = {
+    "頼まれごと": [
+      `${c.boundary}。`,
+      `今日は引き受けられません。`,
+      `今は難しいです。必要なら別の方法を考えましょう。`,
+      `${c.boundary}。少し時間を置いて返事します。`,
+      `それは今回はできません。`,
+      `手伝える範囲を確認してから返事します。`
+    ],
+    "罪悪感": [
+      `${c.boundary}。無理して引き受けるのはやめておきます。`,
+      `申し訳なさはありますが、今回は難しいです。`,
+      `今の私には引き受けられません。`,
+      `${c.boundary}。理由はここまでにします。`,
+      `すぐに返事せず、予定を見てから決めます。`,
+      `気持ちは受け取りました。ただ、今回は見送ります。`
+    ],
+    "不機嫌への反応": [
+      `不機嫌そうに見えるね。話したければ聞くよ。`,
+      `今は少し距離を取ります。落ち着いたら話しましょう。`,
+      `気持ちは尊重するけれど、私は無理に合わせません。`,
+      `${c.boundary}。必要なら後で話を聞きます。`,
+      `私はいったん落ち着く時間を取ります。`,
+      `様子は気になるけれど、私が全部背負うことはしません。`
+    ],
+    "急なお願い": [
+      `急には対応できません。`,
+      `${c.boundary}。`,
+      `今すぐは難しいです。明日なら確認できます。`,
+      `一度予定を見てから返事します。`,
+      `今日は無理です。急ぎなら別の方法を探してください。`,
+      `少し考える時間をください。`
+    ],
+    "過剰な共感": [
+      `大切に聞きたいから、今日は短い時間だけにします。`,
+      `心配しています。ただ、私が全部抱えることはできません。`,
+      `${c.boundary}。今の私にできるのはここまでです。`,
+      `少しなら聞けます。続きは別の日にしましょう。`,
+      `気持ちは受け止めます。でも私も休みます。`,
+      `一緒に整理はできます。代わりに背負うことはできません。`
+    ],
+    "説明しすぎ": [
+      `今回は難しいです。`,
+      `行けません。声をかけてくれてありがとう。`,
+      `${c.boundary}。詳しい理由は控えます。`,
+      `今回は見送ります。また合う時にお願いします。`,
+      `できません。必要なことだけお伝えします。`,
+      `少し考えましたが、今回は引き受けません。`
+    ],
+    "拒否・断る": [
+      `それはやめてください。`,
+      `私はそれは受け入れられません。`,
+      `${c.boundary}。`,
+      `その形ではできません。`,
+      `嫌なので断ります。`,
+      `今回はNoにします。`
+    ]
+  };
+
+  return replies[category][pattern];
+}
+
 const themeTemplates = [
   {
     category: "頼まれごと",
     scene: (c) => `${c.person}から「${c.request}」と言われました。あなたは${c.limit}状態です。どう返しますか？`,
     codependent: (c) => `わかった。私が何とかするね。`,
     middle: (c) => `今はちょっと困るけど、たぶん大丈夫だと思う。`,
-    healthy: (c) => `${c.boundary}。できる範囲なら一緒に考えます。`,
+    healthy: (c, index) => naturalHealthy("頼まれごと", c, index),
     feedback: "頼まれごとは、引き受けるか断るかを一度自分で選んでよいものです。",
     point: "DEAR MANのAssertを使い、できる範囲とできない範囲を短く伝えます。"
   },
@@ -53,7 +117,7 @@ const themeTemplates = [
     makeScene: (c) => `${c.person}の期待に応えられないと、強い罪悪感が出てきます。状況は「${c.request}」です。どう考えて返しますか？`,
     codependent: (c) => `申し訳ないから、無理してでもやります。`,
     middle: (c) => `罪悪感はあるけど、できるかどうか少し迷っています。`,
-    healthy: (c) => `申し訳なさはあるけれど、${c.boundary}。返事は落ち着いて決めます。`,
+    healthy: (c, index) => naturalHealthy("罪悪感", c, index),
     feedback: "罪悪感は大切なサインですが、必ず従う命令ではありません。",
     point: "CBTで『断ると悪い人になる』を『できる範囲を選んでよい』に見直します。"
   },
@@ -62,7 +126,7 @@ const themeTemplates = [
     makeScene: (c) => `${c.person}が不機嫌そうに見えます。あなたは「${c.request}」に応じるべきか迷っています。どう関わりますか？`,
     codependent: (c) => `機嫌が悪そうだから、私が合わせます。何でも言って。`,
     middle: (c) => `不機嫌そうにされると落ち着かないから、早く済ませたいです。`,
-    healthy: (c) => `不機嫌そうに見えるね。必要なら聞くけれど、${c.boundary}。`,
+    healthy: (c, index) => naturalHealthy("不機嫌への反応", c, index),
     feedback: "相手の感情は尊重できますが、機嫌を整える責任を背負いすぎないことが境界線です。",
     point: "GIVEのGentleを保ちながら、自分の責任範囲を超えない練習です。"
   },
@@ -71,7 +135,7 @@ const themeTemplates = [
     makeScene: (c) => `急に「${c.request}」と頼まれました。あなたは${c.limit}状態です。どう返しますか？`,
     codependent: (c) => `急ぎなんだよね。今すぐやるよ。`,
     middle: (c) => `急すぎて困るけど、少しならできるかもしれない。`,
-    healthy: (c) => `急な対応は難しいです。${c.boundary}。必要なら代替案を考えます。`,
+    healthy: (c, index) => naturalHealthy("急なお願い", c, index),
     feedback: "急なお願いほど、即答せずに自分の予定と余力を確認することが大切です。",
     point: "Mindfulに戻り、焦りではなく選択で返答します。"
   },
@@ -80,7 +144,7 @@ const themeTemplates = [
     makeScene: (c) => `${c.person}がつらそうで、あなたは「自分がもっと支えなければ」と感じています。テーマは「${c.request}」です。どう関わりますか？`,
     codependent: (c) => `つらいなら私が全部受け止めるよ。最後まで付き合うね。`,
     middle: (c) => `心配だから、少し無理してでも聞いた方がいいかも。`,
-    healthy: (c) => `大切に聞きたいです。ただ、${c.boundary}。私にできる範囲で関わります。`,
+    healthy: (c, index) => naturalHealthy("過剰な共感", c, index),
     feedback: "共感は相手を丸ごと背負うことではありません。自分の余力も同じくらい大切です。",
     point: "共感と責任の境界を分けます。『聞く』と『背負う』は別です。"
   },
@@ -89,7 +153,7 @@ const themeTemplates = [
     makeScene: (c) => `${c.person}に「${c.request}」と言われました。断ると嫌われそうで、理由を長く説明したくなっています。どう返しますか？`,
     codependent: (c) => `本当にごめん。実は色々あって、全部説明すると…。`,
     middle: (c) => `無理なんだけど、理由をわかってもらえないと困ります。`,
-    healthy: (c) => `今回は難しいです。${c.boundary}。必要なことだけお伝えします。`,
+    healthy: (c, index) => naturalHealthy("説明しすぎ", c, index),
     feedback: "説明は最小限で大丈夫です。長い説明で自分を守ろうとしすぎると、かえって疲れやすくなります。",
     point: "FASTのApologiesを意識し、過度に謝らず、短く本当のことを言います。"
   },
@@ -98,7 +162,7 @@ const themeTemplates = [
     makeScene: (c) => `${c.person}から「${c.request}」と言われましたが、あなたは嫌だと感じています。どう境界線を出しますか？`,
     codependent: (c) => `嫌だけど、波風を立てたくないから合わせます。`,
     middle: (c) => `本当は嫌です。できればやめてほしいです。`,
-    healthy: (c) => `それは私は受け入れられません。${c.boundary}。`,
+    healthy: (c, index) => naturalHealthy("拒否・断る", c, index),
     feedback: "嫌だと感じた時は、その感覚を無視せず、短く明確に拒否してよい場面があります。",
     point: "自分の体感を手がかりに、Noを短く言う練習です。"
   }
@@ -116,6 +180,7 @@ function buildQuestions() {
 
 function makeQuestion(theme, context, index) {
   const scene = theme.makeScene ? theme.makeScene(context) : theme.scene(context);
+  const healthy = theme.healthy(context, index);
   return {
     id: `${theme.category}-${index + 1}`,
     category: theme.category,
@@ -123,10 +188,10 @@ function makeQuestion(theme, context, index) {
     choices: [
       { text: theme.codependent(context), type: "codependent" },
       { text: theme.middle(context), type: "middle" },
-      { text: theme.healthy(context), type: "healthy" }
+      { text: healthy, type: "healthy" }
     ],
     feedback: theme.feedback,
-    modelAnswer: theme.healthy(context),
+    modelAnswer: healthy,
     point: theme.point
   };
 }
