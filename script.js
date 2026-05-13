@@ -91,6 +91,35 @@ function naturalHealthy(category, c, index) {
   return replies[category][pattern];
 }
 
+function contextsForCategory(category) {
+  const includesAny = (context, words) => words.some((word) => context.request.includes(word) || context.limit.includes(word));
+  const pools = {
+    "頼まれごと": situationContexts.filter((context) =>
+      includesAny(context, ["手伝", "行って", "聞いて", "進めて", "参加", "対応", "説明", "立て替え", "送って", "引き受け", "返信", "調整"])
+    ),
+    "罪悪感": situationContexts.filter((context) =>
+      includesAny(context, ["参加", "訪問", "手伝", "相談", "話を聞", "優先", "期待", "来て", "合わせ"])
+    ),
+    "不機嫌への反応": situationContexts.filter((context) =>
+      includesAny(context, ["予定", "買い物", "相談", "参加", "訪問", "変更", "優先", "問題", "話", "合わせ"])
+    ),
+    "急なお願い": situationContexts.filter((context) =>
+      includesAny(context, ["今すぐ", "今日中", "急な", "急に", "代わり", "追加作業", "買い物", "訪問", "返信", "変更", "調整役"])
+    ),
+    "過剰な共感": situationContexts.filter((context) =>
+      includesAny(context, ["相談", "話を聞", "問題", "説明", "不安", "つら", "個人的", "長め", "代わり", "優先"])
+    ),
+    "説明しすぎ": situationContexts.filter((context) =>
+      includesAny(context, ["参加", "訪問", "返信", "詳しく", "立て替え", "送って", "引き受け", "来て", "優先", "予定"])
+    ),
+    "拒否・断る": situationContexts.filter((context) =>
+      includesAny(context, ["冗談", "写真", "個人的", "家へ", "立て替え", "変更", "普段通り", "優先", "合わせ", "受け流"])
+    )
+  };
+
+  return pools[category].length ? pools[category] : situationContexts;
+}
+
 const themeTemplates = [
   {
     category: "頼まれごと",
@@ -161,9 +190,11 @@ const themeTemplates = [
 function buildQuestions() {
   const generated = [];
   themeTemplates.forEach((theme) => {
-    situationContexts.forEach((context, index) => {
+    const contexts = contextsForCategory(theme.category);
+    for (let index = 0; index < 22; index += 1) {
+      const context = contexts[index % contexts.length];
       generated.push(makeQuestion(theme, context, index));
-    });
+    }
   });
   return generated.slice(0, 150);
 }
