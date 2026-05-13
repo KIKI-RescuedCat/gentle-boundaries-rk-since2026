@@ -123,7 +123,7 @@ function contextsForCategory(category) {
 const themeTemplates = [
   {
     category: "頼まれごと",
-    scene: (c) => `${c.person}から「${c.request}」と言われました。あなたは${c.limit}状態です。どう返しますか？`,
+    scene: (c) => `${c.person}から「${c.request}」という話が出ました。今日は${c.limit}日。返事をするなら？`,
     codependent: (c) => `わかった。私が何とかするね。`,
     middle: (c) => `今はちょっと困るけど、たぶん大丈夫だと思う。`,
     healthy: (c, index) => naturalHealthy("頼まれごと", c, index),
@@ -133,7 +133,7 @@ const themeTemplates = [
   {
     category: "罪悪感",
     scene: `${"dynamic"}`,
-    makeScene: (c) => `${c.person}の期待に応えられないと、強い罪悪感が出てきます。状況は「${c.request}」です。どう考えて返しますか？`,
+    makeScene: (c) => `${c.person}の期待に応えたい気持ちはあるけれど、「${c.request}」は今の自分には重く感じます。口にするなら？`,
     codependent: (c) => `申し訳ないから、無理してでもやります。`,
     middle: (c) => `罪悪感はあるけど、できるかどうか少し迷っています。`,
     healthy: (c, index) => naturalHealthy("罪悪感", c, index),
@@ -142,7 +142,7 @@ const themeTemplates = [
   },
   {
     category: "不機嫌への反応",
-    makeScene: (c) => `${c.person}が不機嫌そうに見えます。あなたは「${c.request}」に応じるべきか迷っています。どう関わりますか？`,
+    makeScene: (c) => `${c.person}の表情が少し曇っています。「${c.request}」の話も出ていて、空気に引っぱられそうです。どう関わる？`,
     codependent: (c) => `機嫌が悪そうだから、私が合わせます。何でも言って。`,
     middle: (c) => `不機嫌そうにされると落ち着かないから、早く済ませたいです。`,
     healthy: (c, index) => naturalHealthy("不機嫌への反応", c, index),
@@ -151,7 +151,7 @@ const themeTemplates = [
   },
   {
     category: "急なお願い",
-    makeScene: (c) => `急に「${c.request}」と頼まれました。あなたは${c.limit}状態です。どう返しますか？`,
+    makeScene: (c) => `予定していなかったタイミングで「${c.request}」の話が来ました。こちらは${c.limit}ところです。返事をするなら？`,
     codependent: (c) => `急ぎなんだよね。今すぐやるよ。`,
     middle: (c) => `急すぎて困るけど、少しならできるかもしれない。`,
     healthy: (c, index) => naturalHealthy("急なお願い", c, index),
@@ -160,7 +160,7 @@ const themeTemplates = [
   },
   {
     category: "過剰な共感",
-    makeScene: (c) => `${c.person}がつらそうで、あなたは「自分がもっと支えなければ」と感じています。テーマは「${c.request}」です。どう関わりますか？`,
+    makeScene: (c) => `${c.person}がつらそうに話しています。「${c.request}」の流れで、つい全部受け止めたくなります。どう関わる？`,
     codependent: (c) => `つらいなら私が全部受け止めるよ。最後まで付き合うね。`,
     middle: (c) => `心配だから、少し無理してでも聞いた方がいいかも。`,
     healthy: (c, index) => naturalHealthy("過剰な共感", c, index),
@@ -169,7 +169,7 @@ const themeTemplates = [
   },
   {
     category: "説明しすぎ",
-    makeScene: (c) => `${c.person}に「${c.request}」と言われました。断ると嫌われそうで、理由を長く説明したくなっています。どう返しますか？`,
+    makeScene: (c) => `「${c.request}」の話に、胸の中で言い訳がいくつも浮かんできます。短く返すなら？`,
     codependent: (c) => `本当にごめん。実は色々あって、全部説明すると…。`,
     middle: (c) => `無理なんだけど、理由をわかってもらえないと困ります。`,
     healthy: (c, index) => naturalHealthy("説明しすぎ", c, index),
@@ -178,7 +178,7 @@ const themeTemplates = [
   },
   {
     category: "拒否・断る",
-    makeScene: (c) => `${c.person}から「${c.request}」と言われましたが、あなたは嫌だと感じています。どう境界線を出しますか？`,
+    makeScene: (c) => `「${c.request}」の流れになりそうです。体の奥で、これは嫌だな、と感じています。言葉にするなら？`,
     codependent: (c) => `嫌だけど、波風を立てたくないから合わせます。`,
     middle: (c) => `本当は嫌です。できればやめてほしいです。`,
     healthy: (c, index) => naturalHealthy("拒否・断る", c, index),
