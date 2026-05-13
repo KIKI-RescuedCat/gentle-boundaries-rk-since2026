@@ -164,38 +164,6 @@ h2 {
   font-weight: 800;
 }
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
-  gap: 10px;
-  margin-bottom: 22px;
-}
-
-.category {
-  min-height: 48px;
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--soft-ink);
-  font-weight: 800;
-  box-shadow: 0 7px 18px rgba(90, 70, 105, 0.06);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
-}
-
-.category:hover {
-  transform: translateY(-1px);
-  border-color: #d7c4dc;
-  background: #fff;
-}
-
-.category.active {
-  border-color: rgba(154, 131, 189, 0.62);
-  background: linear-gradient(180deg, #f4eaf7, #fff8fb);
-  color: var(--lavender-dark);
-  box-shadow: 0 10px 24px rgba(154, 131, 189, 0.18);
-}
-
 .primary,
 .secondary,
 .text-button,
@@ -324,13 +292,6 @@ h2 {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 14px;
-}
-
-.dev-category {
-  margin: -6px 0 14px;
-  color: #9b8fa3;
-  font-size: 0.78rem;
-  line-height: 1.5;
 }
 
 #questionCategory,
@@ -597,13 +558,11 @@ button:focus-visible {
     font-size: 0.96rem;
   }
 
-  .category-grid,
   .checkin-options {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .category,
   .primary,
   .secondary {
     min-height: 52px;

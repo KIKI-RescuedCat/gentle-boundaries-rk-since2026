@@ -1,13 +1,3 @@
-const categories = [
-  "頼まれごと",
-  "罪悪感",
-  "不機嫌への反応",
-  "急なお願い",
-  "過剰な共感",
-  "説明しすぎ",
-  "拒否・断る"
-];
-
 const storageKey = "boundaryTrainingRecords";
 const lastQuestionKeyPrefix = "boundaryTrainingLastQuestion:";
 const dailyQuestionCount = 10;
@@ -206,8 +196,6 @@ const checkInItems = [
   "自分に優しい言葉を使えましたか？"
 ];
 
-let selectedCategory = categories[0];
-let activeCategory = categories[0];
 let dailyQuestions = [];
 let currentIndex = 0;
 let score = 0;
@@ -218,14 +206,12 @@ let checkInAnswers = {};
 const intro = document.getElementById("intro");
 const quiz = document.getElementById("quiz");
 const summary = document.getElementById("summary");
-const categoryGrid = document.getElementById("categoryGrid");
 const startBtn = document.getElementById("startBtn");
 const homeBtn = document.getElementById("homeBtn");
 const progressText = document.getElementById("progressText");
 const progressFill = document.getElementById("progressFill");
 const questionCategory = document.getElementById("questionCategory");
 const scoreText = document.getElementById("scoreText");
-const devCategoryLabel = document.getElementById("devCategoryLabel");
 const sceneText = document.getElementById("sceneText");
 const choicesEl = document.getElementById("choices");
 const feedback = document.getElementById("feedback");
@@ -247,25 +233,8 @@ function shuffle(items) {
   return [...items].sort(() => Math.random() - 0.5);
 }
 
-function renderCategories() {
-  categoryGrid.innerHTML = "";
-  categories.forEach((category) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `category${category === selectedCategory ? " active" : ""}`;
-    button.textContent = category;
-    button.addEventListener("click", () => {
-      selectedCategory = category;
-      renderCategories();
-      updateDevCategoryLabel();
-    });
-    categoryGrid.appendChild(button);
-  });
-}
-
 function startTraining() {
-  activeCategory = selectedCategory;
-  dailyQuestions = createDailyQuestions(activeCategory);
+  dailyQuestions = createDailyQuestions();
   avoidRepeatFromLastSession();
   currentIndex = 0;
   score = 0;
@@ -275,13 +244,12 @@ function startTraining() {
   renderQuestion();
 }
 
-function createDailyQuestions(category) {
-  const categoryQuestions = questions.filter((question) => question.category === category);
-  return shuffle(categoryQuestions).slice(0, dailyQuestionCount);
+function createDailyQuestions() {
+  return shuffle(questions).slice(0, dailyQuestionCount);
 }
 
 function avoidRepeatFromLastSession() {
-  const lastId = localStorage.getItem(`${lastQuestionKeyPrefix}${activeCategory}`);
+  const lastId = localStorage.getItem(`${lastQuestionKeyPrefix}all`);
   if (!lastId || dailyQuestions.length < 2 || dailyQuestions[0].id !== lastId) {
     return;
   }
@@ -300,7 +268,7 @@ function showScreen(name) {
 
 function renderQuestion() {
   const currentQuestion = dailyQuestions[currentIndex];
-  localStorage.setItem(`${lastQuestionKeyPrefix}${activeCategory}`, currentQuestion.id);
+  localStorage.setItem(`${lastQuestionKeyPrefix}all`, currentQuestion.id);
   answered = false;
   feedback.classList.add("hidden");
   choicesEl.innerHTML = "";
@@ -309,7 +277,6 @@ function renderQuestion() {
   questionCategory.textContent = currentQuestion.category;
   scoreText.textContent = `正答 ${score} 問`;
   sceneText.textContent = currentQuestion.scene;
-  updateDevCategoryLabel(currentQuestion.category);
 
   shuffle(currentQuestion.choices).forEach((choice) => {
     const button = document.createElement("button");
@@ -418,7 +385,7 @@ function saveRecord() {
   const rate = Math.round((score / dailyQuestions.length) * 100);
   records.unshift({
     date: new Date().toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" }),
-    category: activeCategory,
+    category: "全テーマ",
     score,
     total: dailyQuestions.length,
     rate,
@@ -467,15 +434,6 @@ function clearHistory() {
   renderHistory();
 }
 
-function updateDevCategoryLabel(currentCategory = "") {
-  if (!devCategoryLabel) {
-    return;
-  }
-
-  const currentText = currentCategory ? ` / 表示中: ${currentCategory}` : "";
-  devCategoryLabel.textContent = `確認用 選択: ${selectedCategory} / 出題セット: ${activeCategory}${currentText}`;
-}
-
 startBtn.addEventListener("click", startTraining);
 homeBtn.addEventListener("click", () => showScreen("intro"));
 retryBtn.addEventListener("click", retryQuestion);
@@ -484,6 +442,4 @@ saveBtn.addEventListener("click", saveRecord);
 summaryHomeBtn.addEventListener("click", () => showScreen("intro"));
 clearHistoryBtn.addEventListener("click", clearHistory);
 
-renderCategories();
-updateDevCategoryLabel();
 renderHistory();
