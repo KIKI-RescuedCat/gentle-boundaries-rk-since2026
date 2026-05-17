@@ -39,7 +39,7 @@ function naturalHealthy(category, c, index) {
       `助けたい気持ちはあるけれど、今日は${c.limit}。まず自分の余白を確認しよう。`,
       `すぐ引き受けなくても大丈夫。今の自分に無理がないか見てから決めよう。`,
       `相手を大切にしたい気持ちと、自分を休ませたい気持ちが両方ある。`,
-      `${c.boundary}気持ちもある。少し間を置いて考えよう。`,
+      `${c.boundary}気持ちもある。今の自分の感覚を見てみよう。`,
       `断ることは冷たさではなく、今の自分を守る選択かもしれない。`,
       `手伝えるかどうかより先に、今の疲れ具合を見てみよう。`
     ],
@@ -199,7 +199,7 @@ function contextsForCategory(category) {
 const themeTemplates = [
   {
     category: "頼まれごと",
-    scene: (c) => `ふっと連絡が入ります。「${c.request}」 今日は、${c.limit}。少し間を置いて心の反応を見てみます。`,
+    scene: (c) => `ふっと連絡が入ります。「${c.request}」 今日は、${c.limit}。心の反応を見てみます。`,
     codependent: (c) => `頼まれたなら、私が何とかしないと。`,
     middle: (c) => `少ししんどいけれど、たぶん引き受けた方が丸く収まりそう。`,
     healthy: (c, index) => naturalHealthy("頼まれごと", c, index),
@@ -380,7 +380,7 @@ function renderQuestion() {
   choicesEl.innerHTML = "";
   progressText.textContent = `${currentIndex + 1} / ${dailyQuestions.length} 問`;
   progressFill.style.width = `${(currentIndex / dailyQuestions.length) * 100}%`;
-  scoreText.textContent = `境界線あり ${score} 問`;
+  scoreText.textContent = `自分を大切にできた場面 ${score} つ`;
   sceneText.textContent = currentQuestion.scene;
 
   shuffle(currentQuestion.choices).forEach((choice) => {
@@ -428,7 +428,7 @@ function selectChoice(choice, selectedButton) {
   feedbackText.textContent = question.feedback;
   modelAnswerText.textContent = question.modelAnswer;
   pointText.textContent = question.point;
-  scoreText.textContent = `境界線あり ${score} 問`;
+  scoreText.textContent = `自分を大切にできた場面 ${score} つ`;
   feedback.classList.remove("hidden");
 }
 
@@ -448,7 +448,7 @@ function nextQuestion() {
 
 function showSummary() {
   const rate = Math.round((score / dailyQuestions.length) * 100);
-  summaryScore.textContent = `境界線あり ${score} / ${dailyQuestions.length} 問（${rate}%）`;
+  summaryScore.textContent = `自分を大切にできた場面 ${score} / ${dailyQuestions.length} つ（${rate}%）`;
   checkInAnswers = {};
   successInput.value = "";
   renderCheckIn();
@@ -529,7 +529,7 @@ function renderHistory() {
     const item = document.createElement("div");
     item.className = "history-item";
     const success = record.success ? ` 小さな成功：${record.success}` : "";
-    item.textContent = `${record.date} / ${record.category} / 境界線あり ${record.score}/${record.total}（${record.rate}%）${success}`;
+    item.textContent = `${record.date} / ${record.category} / 自分を大切にできた場面 ${record.score}/${record.total}（${record.rate}%）${success}`;
     historyList.appendChild(item);
   });
 }
