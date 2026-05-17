@@ -31,60 +31,60 @@ function naturalHealthy(category, c, index) {
   const pattern = index % 6;
   const replies = {
     "頼まれごと": [
-      `${c.boundary}。`,
-      `今日は少し難しそうです。`,
-      `今は余裕がないので、別の形なら考えられます。`,
-      `${c.boundary}。少し時間を置いて返事します。`,
-      `今回は見送らせてください。`,
-      `手伝える範囲を確認してから返事します。`
+      `助けたい気持ちはあるけれど、今日は${c.limit}。まず自分の余白を確認しよう。`,
+      `すぐ引き受けなくても大丈夫。今の自分にできる量を見てから決めよう。`,
+      `相手を大切にしたい気持ちと、自分を休ませたい気持ちが両方ある。`,
+      `${c.boundary}気持ちもある。少し間を置いて考えよう。`,
+      `断ることは冷たさではなく、今の自分を守る選択かもしれない。`,
+      `手伝えるかどうかより先に、今の疲れ具合を見てみよう。`
     ],
     "罪悪感": [
-      `${c.boundary}。無理して引き受けるのはやめておきます。`,
-      `申し訳なさはありますが、今回は見送ります。`,
-      `今の私には少し重いので、今回は控えます。`,
-      `${c.boundary}。理由はここまでにします。`,
-      `すぐに返事せず、予定を見てから決めます。`,
-      `気持ちは受け取りました。ただ、今回は見送ります。`
+      `申し訳なさはある。でも、その気持ちだけで決めなくてもいい。`,
+      `罪悪感が出ているだけで、引き受ける必要があるとは限らない。`,
+      `今の私には少し重い。そう感じていることを大事にしていい。`,
+      `${c.boundary}気持ちもある。理由を増やしすぎなくていい。`,
+      `すぐ決めずに、予定と体力を見てから考えよう。`,
+      `相手の期待は受け取りつつ、自分の限界も同じくらい見ていい。`
     ],
     "不機嫌への反応": [
-      `不機嫌そうに見えるね。話したければ聞くよ。`,
-      `今は少し距離を取ります。落ち着いたら話しましょう。`,
-      `気持ちは気になるけれど、私は無理に合わせすぎないでおきます。`,
-      `${c.boundary}。必要なら後で話を聞きます。`,
-      `私はいったん落ち着く時間を取ります。`,
-      `様子は気になるけれど、少し自分のペースも守ります。`
+      `相手の空気は気になる。でも、機嫌まで自分が整えなくていい。`,
+      `落ち着かない感じがある。まず自分の呼吸を戻そう。`,
+      `相手の気持ちを尊重しながら、自分のペースも守っていい。`,
+      `${c.boundary}気持ちもある。空気だけで決めないでおこう。`,
+      `今は少し距離を取る方が、自分にも相手にもやさしいかもしれない。`,
+      `様子は気になるけれど、全部引き受けなくていい。`
     ],
     "急なお願い": [
-      `今すぐは少し難しいです。`,
-      `${c.boundary}。`,
-      `今すぐは難しいです。明日なら確認できます。`,
-      `一度予定を見てから返事します。`,
-      `今日は余裕がありません。別の方法があるかもしれません。`,
-      `少し考える時間をください。`
+      `急いで返事したくなるけれど、一度予定を見てからでいい。`,
+      `${c.boundary}気持ちがある。焦りだけで決めないようにしよう。`,
+      `今すぐ動けるかより、今の余力を先に確認しよう。`,
+      `急な流れに飲まれそう。少し考える時間を取っていい。`,
+      `今日は余裕が少ない。別の方法があるかもしれない。`,
+      `すぐ答えなくても、落ち着いて選び直せる。`
     ],
     "過剰な共感": [
-      `大切に聞きたいから、今日は短い時間だけにします。`,
-      `心配しています。ただ、私も少し休みながら関わります。`,
-      `${c.boundary}。今の私にできるのはここまでです。`,
-      `少しなら聞けます。続きは別の日にしましょう。`,
-      `気持ちは受け止めます。でも私も休みます。`,
-      `一緒に整理することならできます。少しずつ考えましょう。`
+      `助けたい気持ちと、今の自分には余裕がない感覚が両方ある。`,
+      `心配している。でも、相手のつらさを全部持たなくていい。`,
+      `${c.boundary}気持ちもある。今の私にできる範囲を小さく見よう。`,
+      `聞きたい気持ちはある。けれど、今日は短い時間がちょうどよさそう。`,
+      `相手の気持ちは大切。私の疲れも大切。`,
+      `一緒に考えることと、代わりに背負うことは別にしていい。`
     ],
     "説明しすぎ": [
-      `今回は見送ります。`,
-      `今回は行かないことにします。声をかけてくれてありがとう。`,
-      `${c.boundary}。詳しい理由は控えます。`,
-      `今回は見送ります。また合う時にお願いします。`,
-      `今回は控えます。必要なことだけお伝えします。`,
-      `少し考えましたが、今回は引き受けません。`
+      `わかってもらうために、全部説明しなくてもいい。`,
+      `理由をたくさん並べたくなっている。短くても伝わるかもしれない。`,
+      `${c.boundary}気持ちがある。詳しい理由は足さなくていい。`,
+      `嫌われたくなくて説明したくなる。でも、今は短く整えよう。`,
+      `必要なことだけ言えば大丈夫。自分を証明しなくていい。`,
+      `少し考えた上で選ぶなら、それ以上説明しなくてもいい。`
     ],
     "拒否・断る": [
-      `その言い方は少し苦手です。`,
-      `私はその形だと少しつらいです。`,
-      `${c.boundary}。`,
-      `その形は、今回は控えたいです。`,
-      `今は少し距離を置きたいです。`,
-      `今回はやめておきます。`
+      `嫌だな、という感覚がある。まずそれをなかったことにしない。`,
+      `強く言わなくても、少し距離を置く選択はできる。`,
+      `${c.boundary}気持ちもある。自分の感覚を信じていい。`,
+      `合わせた方が楽に見えるけれど、あとで疲れそうな感じがある。`,
+      `今は少し離れる方が、自分を大切にできそう。`,
+      `断るというより、自分の心地よさを守る選択をしたい。`
     ]
   };
 
@@ -124,26 +124,26 @@ const themeTemplates = [
   {
     category: "頼まれごと",
     scene: (c) => `${c.person}から、ふっと連絡が入ります。「${c.request}」 今日は、${c.limit}。少し間を置いて返事を選びます。`,
-    codependent: (c) => `わかった。私がやっておくね。`,
-    middle: (c) => `今はちょっと困るけど、たぶん大丈夫だと思う。`,
+    codependent: (c) => `頼まれたなら、私が何とかしないと。`,
+    middle: (c) => `少ししんどいけれど、たぶん引き受けた方が丸く収まりそう。`,
     healthy: (c, index) => naturalHealthy("頼まれごと", c, index),
-    feedback: "頼まれごとは、引き受けるか断るかを一度自分で選んでよいものです。",
-    point: "DEAR MANのAssertを使い、できる範囲とできない範囲を短く伝えます。"
+    feedback: "頼まれた瞬間の反応に気づくと、引き受ける前に自分の余白を確認しやすくなります。",
+    point: "まず心の中で『今の私に余裕はある？』と確認します。"
   },
   {
     category: "罪悪感",
     scene: `${"dynamic"}`,
     makeScene: (c) => `「${c.request}」 画面を見たまま、断ったら悪いかな、が浮かんできます。自分の本音も小さく残っています。`,
-    codependent: (c) => `申し訳ないから、無理してでもやります。`,
-    middle: (c) => `罪悪感はあるけど、できるかどうか少し迷っています。`,
+    codependent: (c) => `断ったら悪い人みたい。無理してでも応えなきゃ。`,
+    middle: (c) => `罪悪感はある。けれど、本当にできるか少し迷っている。`,
     healthy: (c, index) => naturalHealthy("罪悪感", c, index),
-    feedback: "罪悪感は大切なサインですが、必ず従う命令ではありません。",
-    point: "CBTで『断ると悪い人になる』を『できる範囲を選んでよい』に見直します。"
+    feedback: "罪悪感は大切なサインですが、そのまま行動を決める合図とは限りません。",
+    point: "『悪い人になる』ではなく『今の自分に合う選択を探す』に戻します。"
   },
   {
     category: "不機嫌への反応",
     makeScene: (c) => `${c.person}の返事が少し短く感じます。「${c.request}」 空気に合わせそうになりながら、自分のペースも思い出します。`,
-    codependent: (c) => `機嫌が悪そうだから、私が合わせるね。`,
+    codependent: (c) => `機嫌が悪そう。私が合わせれば落ち着くかもしれない。`,
     middle: (c) => `不機嫌そうだと落ち着かないから、つい合わせたくなります。`,
     healthy: (c, index) => naturalHealthy("不機嫌への反応", c, index),
     feedback: "相手の気持ちは大切にしながらも、機嫌まで自分が抱え込まなくて大丈夫です。",
@@ -152,16 +152,16 @@ const themeTemplates = [
   {
     category: "急なお願い",
     makeScene: (c) => `予定外の連絡が入ります。「${c.request}」 こちらは、${c.limit}。`,
-    codependent: (c) => `急ぎなんだよね。今すぐやるよ。`,
-    middle: (c) => `急すぎて困るけど、少しならできるかもしれない。`,
+    codependent: (c) => `急ぎなら、今すぐ動かなきゃ。`,
+    middle: (c) => `急すぎて困る。でも少しなら無理してできるかもしれない。`,
     healthy: (c, index) => naturalHealthy("急なお願い", c, index),
-    feedback: "急なお願いほど、即答せずに自分の予定と余力を確認することが大切です。",
-    point: "Mindfulに戻り、焦りではなく選択で返答します。"
+    feedback: "急な流れほど、焦りと自分の本音を分けて見ることが助けになります。",
+    point: "すぐ動く前に、体の緊張や疲れを一度確認します。"
   },
   {
     category: "過剰な共感",
     makeScene: (c) => `${c.person}がしんどそうにしています。「${c.request}」 力になりたい気持ちと、自分の疲れが同時にあります。`,
-    codependent: (c) => `つらいなら、今日は私がずっと聞くよ。`,
+    codependent: (c) => `相手がつらいなら、私が最後まで受け止めなきゃ。`,
     middle: (c) => `心配だから、少し無理してでも聞いた方がいいかも。`,
     healthy: (c, index) => naturalHealthy("過剰な共感", c, index),
     feedback: "共感は相手を丸ごと背負うことではありません。自分の余力も同じくらい大切です。",
@@ -170,17 +170,17 @@ const themeTemplates = [
   {
     category: "説明しすぎ",
     makeScene: (c) => `「${c.request}」 断りたいだけなのに、頭の中で理由がどんどん増えていきます。短く言っても大丈夫そうです。`,
-    codependent: (c) => `本当にごめん。実は色々あって、全部説明すると…。`,
-    middle: (c) => `難しいけれど、理由をちゃんと説明しないと落ち着きません。`,
+    codependent: (c) => `ちゃんと理由を全部話さないと、きっとわかってもらえない。`,
+    middle: (c) => `短く言いたいけれど、説明が足りないと不安になる。`,
     healthy: (c, index) => naturalHealthy("説明しすぎ", c, index),
-    feedback: "説明は最小限で大丈夫です。長い説明で自分を守ろうとしすぎると、かえって疲れやすくなります。",
-    point: "FASTのApologiesを意識し、過度に謝らず、短く本当のことを言います。"
+    feedback: "説明したくなる気持ちは自然です。ただ、全部わかってもらおうとすると疲れやすくなります。",
+    point: "心の中で『短くても大丈夫』と確認します。"
   },
   {
     category: "拒否・断る",
     makeScene: (c) => `「${c.request}」 その一言に、少し体が固まります。嫌だな、という感覚をなかったことにしない場面です。`,
-    codependent: (c) => `嫌だけど、波風を立てたくないから合わせます。`,
-    middle: (c) => `少しつらいけれど、どう伝えたらいいか迷います。`,
+    codependent: (c) => `嫌だけど、波風を立てるくらいなら我慢しよう。`,
+    middle: (c) => `少しつらい。けれど、どう扱えばいいかまだ迷っている。`,
     healthy: (c, index) => naturalHealthy("拒否・断る", c, index),
     feedback: "嫌だと感じた時は、その感覚を無視せず、静かに距離を取る言葉を選んで大丈夫です。",
     point: "自分の体感を手がかりに、やわらかく線を引く練習です。"
@@ -304,7 +304,7 @@ function renderQuestion() {
   choicesEl.innerHTML = "";
   progressText.textContent = `${currentIndex + 1} / ${dailyQuestions.length} 問`;
   progressFill.style.width = `${(currentIndex / dailyQuestions.length) * 100}%`;
-  scoreText.textContent = `正答 ${score} 問`;
+  scoreText.textContent = `境界線あり ${score} 問`;
   sceneText.textContent = currentQuestion.scene;
 
   shuffle(currentQuestion.choices).forEach((choice) => {
@@ -352,7 +352,7 @@ function selectChoice(choice, selectedButton) {
   feedbackText.textContent = question.feedback;
   modelAnswerText.textContent = question.modelAnswer;
   pointText.textContent = question.point;
-  scoreText.textContent = `正答 ${score} 問`;
+  scoreText.textContent = `境界線あり ${score} 問`;
   feedback.classList.remove("hidden");
 }
 
@@ -372,7 +372,7 @@ function nextQuestion() {
 
 function showSummary() {
   const rate = Math.round((score / dailyQuestions.length) * 100);
-  summaryScore.textContent = `正答率 ${rate}%（${score} / ${dailyQuestions.length} 問）`;
+  summaryScore.textContent = `境界線あり ${score} / ${dailyQuestions.length} 問（${rate}%）`;
   checkInAnswers = {};
   successInput.value = "";
   renderCheckIn();
@@ -453,7 +453,7 @@ function renderHistory() {
     const item = document.createElement("div");
     item.className = "history-item";
     const success = record.success ? ` 小さな成功：${record.success}` : "";
-    item.textContent = `${record.date} / ${record.category} / 正答率 ${record.rate}%（${record.score}/${record.total}）${success}`;
+    item.textContent = `${record.date} / ${record.category} / 境界線あり ${record.score}/${record.total}（${record.rate}%）${success}`;
     historyList.appendChild(item);
   });
 }
